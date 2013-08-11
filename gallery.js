@@ -9,6 +9,8 @@ define(['Ractive', 'rv!./template'], function(Ractive, template) {
 
       this.on({
 	select: function(event, item) {
+	  item = Math.max(0, item);
+	  item = Math.min(this.get('images').length - 1, item);
 	  this.set('selected', item);
 	}
       });

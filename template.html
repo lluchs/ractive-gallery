@@ -2,6 +2,13 @@
 
 <hr>
 
-{{#images:i}}
-  <img src="{{thumb}}" alt="" proxy-tap="select:{{i}}">
-{{/images}}
+<div class="controls">
+  <button proxy-tap="select:{{( selected - 1 )}}">Prev</button>
+  <button proxy-tap="select:{{( selected + 1 )}}">Next</button>
+</div>
+
+<div class="images">
+  {{#images:i}}
+    <img src="{{thumb}}" alt="" proxy-tap="select:{{i}}">
+  {{/images}}
+</div>
