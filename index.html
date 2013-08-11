@@ -1,0 +1,58 @@
+<!doctype html>
+<title>Ractive Gallery</title>
+
+<section>
+  <h1>Image Gallery</h1>
+
+  <div id="gallery"></div>
+</section>
+
+<script src="bower_components/requirejs/require.js"></script>
+<script>
+  require.config({
+    paths: {
+      "Ractive": "bower_components/ractive/Ractive",
+      "rv": "bower_components/require-ractive-plugin/rv",
+      "text": "bower_components/requirejs-text/text",
+      "requirejs": "bower_components/requirejs/require"
+    }
+  });
+
+  require(['./gallery'], function(Gallery) {
+    new Gallery({
+      el: 'gallery',
+      data: {
+        images: [
+          {
+            src: "http://i.imgur.com/XFXb99E.jpg",
+            thumb: "http://i.imgur.com/XFXb99Es.jpg"
+          },
+          {
+            src: "http://i.imgur.com/kpMGLOq.jpg",
+            thumb: "http://i.imgur.com/kpMGLOqs.jpg"
+          },
+          {
+            src: "http://i.imgur.com/gcX08ug.jpg",
+            thumb: "http://i.imgur.com/gcX08ugs.jpg"
+          },
+          {
+            src: "http://i.imgur.com/GQUT5dH.jpg",
+            thumb: "http://i.imgur.com/GQUT5dHs.jpg"
+          },
+          {
+            src: "http://i.imgur.com/OCMLPGx.jpg",
+            thumb: "http://i.imgur.com/OCMLPGxs.jpg"
+          },
+          {
+            src: "http://i.imgur.com/yIeVjcQ.jpg",
+            thumb: "http://i.imgur.com/yIeVjcQs.jpg"
+          },
+          {
+            src: "http://i.imgur.com/My6Zia7.jpg",
+            thumb: "http://i.imgur.com/My6Zia7s.jpg"
+          }
+        ]
+      }
+    });
+  });
+</script>
