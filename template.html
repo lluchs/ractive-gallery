@@ -3,8 +3,8 @@
 <hr>
 
 <div class="controls">
-  <button proxy-tap="select:{{( selected - 1 )}}">Prev</button>
-  <button proxy-tap="select:{{( selected + 1 )}}">Next</button>
+  <button proxy-tap="select:{{( selected - 1 )}}" disabled="{{( selected == 0 )}}">Prev</button>
+  <button proxy-tap="select:{{( selected + 1 )}}" disabled="{{( selected == images.length - 1 )}}">Next</button>
 </div>
 
 <div class="images">
