@@ -8,6 +8,8 @@ define(['Ractive', 'rv!./template'], function(Ractive, template) {
       this.set('selected', 0);
       this.set('bigview', false);
 
+      this.updateMaxHeight();
+
       this.on({
         select: function(event, item) {
           item = Math.max(0, item);
@@ -19,6 +21,11 @@ define(['Ractive', 'rv!./template'], function(Ractive, template) {
           this.set('bigview', false);
         }
       });
+    },
+
+    // Sets the maximum image height to the browser window height.
+    updateMaxHeight: function() {
+      this.set('maxheight', document.documentElement.clientHeight);
     }
   });
 

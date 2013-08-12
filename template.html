@@ -1,7 +1,7 @@
 {{#bigview}}
   <div class="bigview">
     <button proxy-tap="select:{{( selected - 1 )}}" disabled="{{( selected == 0 )}}">Prev</button>
-    <img src="{{( images[selected].src )}}" alt="" proxy-tap="close">
+    <img src="{{( images[selected].src )}}" alt="" style="max-height: {{maxheight}}px" proxy-tap="close">
     <button proxy-tap="select:{{( selected + 1 )}}" disabled="{{( selected == images.length - 1 )}}">Next</button>
   </div>
 {{/bigview}}
