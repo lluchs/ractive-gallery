@@ -13,11 +13,16 @@
     max-width: 100%;
 }
 
-.ractive-gallery .prev, .ractive-gallery .next {
+.ractive-gallery button {
     position: absolute;
     top: 0;
     bottom: 0;
     width: 2em;
+
+    font-size: 200%;
+    border: 0;
+    background-color: #E5E5E5;
+    opacity: 0.6;
 }
 
 .ractive-gallery .prev {
