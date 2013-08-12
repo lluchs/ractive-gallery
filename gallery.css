@@ -1,0 +1,29 @@
+/* Standard Gallery Styles */
+
+.ractive-gallery {
+    position: relative;
+    text-align: center;
+}
+
+.ractive-gallery img {
+    cursor: pointer;
+}
+
+.ractive-gallery .bigview img {
+    max-width: 100%;
+}
+
+.ractive-gallery .prev, .ractive-gallery .next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2em;
+}
+
+.ractive-gallery .prev {
+    left: 0;
+}
+
+.ractive-gallery .next {
+    right: 0;
+}
