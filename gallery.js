@@ -22,19 +22,27 @@ define(['Ractive', 'rv!./template'], function(Ractive, template) {
           this.set('selected', item);
           this.set('bigview', true);
         },
+        // Closes the big image view.
+        // Shows the controls first when they're not visible. This
+        // improves usability on touch devices.
         close: function() {
-          this.set('bigview', false);
+          if (this.get('controls'))
+            this.set('bigview', false);
+          else
+            this.showControls();
         },
-        showControls: function() {
-          this.set('controls', true);
-          this.controlTimeout();
-        }
+        showControls: this.showControls
       });
     },
 
     // Sets the maximum image height to the browser window height.
     updateMaxHeight: function() {
       this.set('maxheight', document.documentElement.clientHeight);
+    },
+    // Shows the prev/next controls.
+    showControls: function() {
+      this.set('controls', true);
+      this.controlTimeout();
     }
   });
 
