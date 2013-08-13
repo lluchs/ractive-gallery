@@ -7,8 +7,13 @@ define(['Ractive', 'rv!./template'], function(Ractive, template) {
       // Default values
       this.set('selected', 0);
       this.set('bigview', false);
+      this.set('controls', false);
 
       this.updateMaxHeight();
+
+      this.controlTimeout = createTimeout(3000, function() {
+        this.set('controls', false);
+      }.bind(this));
 
       this.on({
         select: function(event, item) {
@@ -19,6 +24,10 @@ define(['Ractive', 'rv!./template'], function(Ractive, template) {
         },
         close: function() {
           this.set('bigview', false);
+        },
+        showControls: function() {
+          this.set('controls', true);
+          this.controlTimeout();
         }
       });
     },
@@ -30,4 +39,18 @@ define(['Ractive', 'rv!./template'], function(Ractive, template) {
   });
 
   return Gallery;
+
+  // Helper functions
+
+  // Creates a timeout that is started and resetted by calling the
+  // returned function.
+  function createTimeout(timeout, fun) {
+    var tid;
+    return function() {
+      if (tid != null)
+        clearTimeout(tid);
+      tid = setTimeout(fun, timeout);
+    }
+  }
+
 });
